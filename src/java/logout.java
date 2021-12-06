@@ -41,7 +41,7 @@ public class logout extends HttpServlet {
             request.setAttribute("msg", "|You need login fisrt|");
             RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
             dispatcher.forward(request, response);
-        } else if (user.getLevel() == 1) {
+        } else if (user.getRole() == 1) {
             historyDAO hisDAO = new historyDAO();
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();

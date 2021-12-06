@@ -59,14 +59,14 @@ public class login extends HttpServlet {
                             HttpSession session = request.getSession();
                             session.setAttribute("user", user);
                             session.setAttribute("status", "1");
-                            if (user.getLevel() == 1) {
-                                historyDAO hisDAO = new historyDAO();
-                                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");
-                                LocalDateTime now = LocalDateTime.now();
-                                DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-                                String time = now.format(formatter);
-                                boolean updateHis = hisDAO.InsertHistory("ADMINLOG", time, "LOGIN# admin name: " + user.getUserName());
-                            }
+//                            if (user.getLevel() == 1) {
+//                                historyDAO hisDAO = new historyDAO();
+//                                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");
+//                                LocalDateTime now = LocalDateTime.now();
+//                                DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+//                                String time = now.format(formatter);
+//                                boolean updateHis = hisDAO.InsertHistory("ADMINLOG", time, "LOGIN# admin name: " + user.getUserName());
+//                            }
 
                             destPage = "index.jsp";
                         } else {

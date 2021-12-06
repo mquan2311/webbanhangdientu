@@ -67,15 +67,12 @@ public class UpdateInfo {
             user = new User();
 //            user.setUserName(result.getString("username"));
 //            user.setEmail(username);
-            user.setUserName(username);
+            user.setUserName(result.getString("username"));
             user.setEmail(result.getString("email"));
             user.setAddress(result.getString("address"));
-            user.setShowName(result.getString("showname"));
             user.setPhone(result.getString("phone"));
-            user.setCity(result.getString("city"));
-            user.setCountry(result.getString("country"));
-            user.setLevel(result.getInt("level"));
-            user.setPassword(result.getString("password"));
+            user.setGender(result.getInt("gender"));
+            user.setRole(result.getInt("role"));
         }
 
         connection.close();
@@ -100,16 +97,15 @@ public class UpdateInfo {
             statement.setString(7, itemidold);
 
             statement.executeUpdate();
-            
+
             connection.close();
-            
+
             return true;
 
         } catch (SQLException ex) {
             ex.printStackTrace();
             return false;
         }
-      
 
     }
 }

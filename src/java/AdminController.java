@@ -45,7 +45,7 @@ String action = request.getParameter("action");
             RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
             dispatcher.forward(request, response);
         } else {
-            level = user.getLevel();
+            level = user.getRole();
             if ((level == 0) && (!action.equals("changepw"))) {
                 request.setAttribute("msg", "You not allow to do this");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");

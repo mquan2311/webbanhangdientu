@@ -11,40 +11,16 @@ package model;
  */
 public class User {
 
-    private int id;
     private String userName;
-    private String showName;
     private String address;
     private String email;
     private String phone;
     private String password;
-    private String city;
-    private String country;
-    private int level;
+    private int gender;
+    private int role;
 
     public User() {
 
-    }
-
-    public User(int id, String userName, String showName, String address, String email, String phone, String password, String city, String country, int level) {
-        this.id = id;
-        this.userName = userName;
-        this.showName = showName;
-        this.address = address;
-        this.email = email;
-        this.phone = phone;
-        this.password = password;
-        this.city = city;
-        this.country = country;
-        this.level = level;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUserName() {
@@ -53,14 +29,6 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public String getShowName() {
-        return showName;
-    }
-
-    public void setShowName(String showName) {
-        this.showName = showName;
     }
 
     public String getAddress() {
@@ -95,28 +63,33 @@ public class User {
         this.password = password;
     }
 
-    public String getCity() {
-        return city;
+    public int getGender() {
+        return gender;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setGender(int gender) {
+        this.gender = gender;
     }
 
-    public String getCountry() {
-        return country;
+    public int getRole() {
+        return role;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setRole(int role) {
+        this.role = role;
     }
 
-    public int getLevel() {
-        return level;
+    public User(String userName, String address, String email, String phone, String password, int gender, int role) {
+        this.userName = userName;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+        this.gender = gender;
+        this.role = role;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
+    
 
+    
 }

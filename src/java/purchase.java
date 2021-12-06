@@ -78,12 +78,12 @@ public class purchase extends HttpServlet {
             User user = (User) session.getAttribute("user");
 
             username = user.getUserName();
-            showname = user.getShowName();
             address = user.getAddress();
             email = user.getEmail();
             phone = user.getPhone();
-            city = user.getCity();
-            country = user.getCountry();
+
+            
+            
 
         }
 

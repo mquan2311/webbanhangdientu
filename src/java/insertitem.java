@@ -50,7 +50,7 @@ public class insertitem extends HttpServlet {
             request.setAttribute("msg", "|You need login fisrt|");
             RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
             dispatcher.forward(request, response);
-        } else if (user.getLevel() == 0) {
+        } else if (user.getRole() == 0) {
             request.setAttribute("msg", "|You not allow to do this|");
             RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
             dispatcher.forward(request, response);

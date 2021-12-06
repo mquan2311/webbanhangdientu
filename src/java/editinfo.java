@@ -95,7 +95,7 @@ public class editinfo extends HttpServlet {
                 dem++;
             }
         } else {
-            level = user.getLevel();
+            level = user.getRole();
         }
 
 //        username = "admin";

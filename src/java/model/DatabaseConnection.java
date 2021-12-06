@@ -19,13 +19,15 @@ public class DatabaseConnection {
 
     private static DatabaseConnection instance;
     private Connection connection;
-    private String url="jdbc:mysql://localhost:3306/demo";
-    private String user="root";
-    private String password="280700";
+    private String url="jdbc:sqlserver://localhost:1433;databaseName=Webdientu";
+    private String user="webbanhang1";
+    private String password="qweasdzxc";
 
     private DatabaseConnection() throws SQLException {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("1");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+             System.out.println("2");
             this.connection = DriverManager.getConnection(url, user, password);
             
         } catch (ClassNotFoundException ex) {
@@ -43,6 +45,9 @@ public class DatabaseConnection {
             instance = new DatabaseConnection();
         }
         return instance;
+    }
+    public static void main(String[] args) throws SQLException, Exception {
+        Connection connection = DatabaseConnection.getInstance().getConnection();
     }
     
 }
